@@ -24,9 +24,3 @@ RUN apt-get update
 
 # iniciar systemd
 CMD ["/lib/systemd/systemd"]
-
-RUN apt install 3cxpbx -y
-
-RUN apt update 
-
-RUN apt upgrade -y
