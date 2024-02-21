@@ -19,6 +19,8 @@ docker build -t 3cx:latest .
 docker run -d --privileged --name 3cx --network=host -p 5001:5001 -p 5060:5060 -p 5061:5061 -p 5090:5090 -p 5091:5091 -p 5015:5015 3cx
 ```
 
+Atente-se para que a opção --network=host esteja na linha de comando, pois é importante que o contêiner utilize a interface de rede da máquina para se conectar ao SIP Trunk.
+
 ### 3. Acessando o Contêiner Docker
 
 ```bash
