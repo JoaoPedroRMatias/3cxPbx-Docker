@@ -45,5 +45,10 @@ echo "deb-src http://deb.debian.org/debian/ bullseye main" >> /etc/apt/sources.l
 apt update
 apt upgrade -y
 ```
+## 6. Observações
 
-Este guia fornece os passos básicos para configurar e gerenciar o 3cx PBX em um ambiente Docker. Certifique-se de ajustar as configurações de acordo com suas necessidades específicas.
+1. **Privilegio e Mapeamento de Recursos**: É necessário conceder ao contêiner permissões elevadas (como `--privileged`) e mapear volumes específicos para permitir o controle do sistema pelo systemd dentro do contêiner.
+
+2. **Complexidade e Overhead**: Executar systemd em um contêiner pode adicionar complexidade e sobrecarga. Porém o sistema 3CX PBX funciona apenas com systemd, por isso, configure corretamente para não haver sobrecarga. 
+
+3. **Monitoramento e Logging**: Certifique-se de que os logs do systemd estejam configurados corretamente para que você possa monitorar e depurar problemas dentro do contêiner.
